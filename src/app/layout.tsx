@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import { AppProvider } from "@/FinanceContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,10 +22,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main className="flex flex-col justify-center items-center">
-            <Navbar />
-            {children}
-          </main>
+          <AppProvider>
+            <main className="flex flex-col justify-center items-center">
+              <Navbar />
+              {children}
+            </main>
+          </AppProvider>
           <Toaster />
         </ThemeProvider>
       </body>

@@ -87,6 +87,7 @@ const SignIn = () => {
             title: "Success",
             description: "User Authenticated Successfully",
           });
+          router.push("/dashboard");
         })
         .catch((error) => {
           const errorCode = error.code;

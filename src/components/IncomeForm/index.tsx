@@ -71,14 +71,14 @@ const IncomeForm = ({ type, onFinish }: FormProps) => {
           control={form.control}
           name="name"
           render={({ field }) => (
-            <FormItem className="grid grid-cols-4 items-center gap-6">
-              <FormLabel htmlFor="name" className="text-right">
+            <FormItem className="grid grid-cols-4 items-center">
+              <FormLabel htmlFor="name" className="text-right mr-4">
                 Name
               </FormLabel>
               <FormControl>
                 <Input id="name" className="col-span-3" {...field} />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="col-span-4 text-right" />
             </FormItem>
           )}
         />
@@ -86,8 +86,8 @@ const IncomeForm = ({ type, onFinish }: FormProps) => {
           control={form.control}
           name="amount"
           render={({ field }) => (
-            <FormItem className="grid grid-cols-4 items-center gap-6">
-              <FormLabel htmlFor="amount" className="text-right">
+            <FormItem className="grid grid-cols-4 items-center">
+              <FormLabel htmlFor="amount" className="text-right mr-4">
                 Amount
               </FormLabel>
               <FormControl>
@@ -98,7 +98,7 @@ const IncomeForm = ({ type, onFinish }: FormProps) => {
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="col-span-4 text-right" />
             </FormItem>
           )}
         />
@@ -106,8 +106,8 @@ const IncomeForm = ({ type, onFinish }: FormProps) => {
           control={form.control}
           name="date"
           render={({ field }) => (
-            <FormItem className="grid grid-cols-4 items-center gap-6">
-              <FormLabel className="text-right">Date</FormLabel>
+            <FormItem className="grid grid-cols-4 items-center">
+              <FormLabel className="text-right mr-4">Date</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
@@ -139,7 +139,7 @@ const IncomeForm = ({ type, onFinish }: FormProps) => {
                   />
                 </PopoverContent>
               </Popover>
-              <FormMessage />
+              <FormMessage className="col-span-4 text-right" />
             </FormItem>
           )}
         />
@@ -147,8 +147,8 @@ const IncomeForm = ({ type, onFinish }: FormProps) => {
           control={form.control}
           name="tag"
           render={({ field }) => (
-            <FormItem className="grid grid-cols-4 items-center gap-6">
-              <FormLabel className="text-right">Tags</FormLabel>
+            <FormItem className="grid grid-cols-4 items-center">
+              <FormLabel className="text-right mr-4">Tags</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="col-span-3">
@@ -164,7 +164,7 @@ const IncomeForm = ({ type, onFinish }: FormProps) => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
-              <FormMessage />
+              <FormMessage className="col-span-4 text-right" />
             </FormItem>
           )}
         />

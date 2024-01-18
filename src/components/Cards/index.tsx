@@ -64,7 +64,7 @@ export const Cards = ({ onFinish }: CardsProps) => {
                   <DialogTitle>Add Income</DialogTitle>
                   <DialogDescription>Add recent income</DialogDescription>
                 </DialogHeader>
-                <IncomeForm onFinish={onFinish} type="Income" />
+                <IncomeForm onFinish={onFinish} type="income" />
               </DialogContent>
             </Dialog>
           </CardFooter>
@@ -86,7 +86,7 @@ export const Cards = ({ onFinish }: CardsProps) => {
                   <DialogTitle>Add Expense</DialogTitle>
                   <DialogDescription>Add recent expenses</DialogDescription>
                 </DialogHeader>
-                <IncomeForm onFinish={onFinish} type="Expense" />
+                <IncomeForm onFinish={onFinish} type="expense" />
               </DialogContent>
             </Dialog>
           </CardFooter>

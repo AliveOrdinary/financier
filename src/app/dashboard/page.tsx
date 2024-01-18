@@ -7,6 +7,8 @@ import { Cards } from "@/components/Cards";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { toast } from "@/components/ui/use-toast";
 import { redirect } from "next/navigation";
+import Charts from "@/components/Charts";
+import NoTransaction from "@/components/NoTransaction";
 
 type TransactionValues = {
   name: string;
@@ -90,9 +92,18 @@ const Dashboard = () => {
     calculateBalance();
   }, [transactions]);
 
+  let sortedTransactions = transactions.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+
   return (
-    <div className="flex justify-center items-center w-full py-6">
+    <div className="flex justify-center items-center w-full flex-col gap-10 py-6">
       <Cards onFinish={onFinish} />
+      {transactions && transactions.length != 0 ? (
+        <Charts sortedTransactions={sortedTransactions} />
+      ) : (
+        <NoTransaction />
+      )}
     </div>
   );
 };
